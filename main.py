@@ -2,7 +2,7 @@ import requests
 import os
 from dotenv import load_dotenv
 from json_loader import load_memes, get_unposted_memes
-from firebase_utils import initialize_firebase, load_posted, save_posted
+from firebase_utils import initialize_firebase, load_posted_from_firebase, save_posted_to_firebase
 import random
 
 # Load environment variables

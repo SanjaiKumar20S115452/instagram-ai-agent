@@ -40,7 +40,7 @@ def create_instagram_post(image_url, caption):
 def main():
     initialize_firebase()
     posted_set = load_posted_from_firebase()
-    all_memes = load_memes("memes.json")
+    all_memes = load_memes("words.json")
     unposted_memes = get_unposted_memes(all_memes, posted_set)
 
     if not unposted_memes:

@@ -39,7 +39,7 @@ def create_instagram_post(image_url, caption):
 
 def main():
     initialize_firebase()
-    posted_set = load_posted()
+    posted_set = load_posted_from_firebase()
     all_memes = load_memes("memes.json")
     unposted_memes = get_unposted_memes(all_memes, posted_set)
 
@@ -52,7 +52,7 @@ def main():
     
     if create_instagram_post(meme['memeurl'], caption):
         posted_set.add(meme['word'])
-        save_posted(posted_set)
+        save_posted_to_firebase(posted_set)
         print(f"✅ Successfully posted '{meme['word']}' to Instagram.")
     else:
         print(f"❌ Failed to post '{meme['word']}'.")
